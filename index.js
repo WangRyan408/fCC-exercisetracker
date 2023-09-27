@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express()
+const app = express();
 const cors = require('cors')
 let bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -60,7 +60,7 @@ async function populateLog(usrID, usrDescription, usrDuration, usrDate) {
 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html')
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 
@@ -245,6 +245,7 @@ app.get('/api/users/:_id/logs', async function(req, res) {
 
 
 
-const listener = app.listen(process.env.PORT || 3000, () => {
+const listener = app.listen(process.env.PORT || 5000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
+  console.log(__dirname);
 })
